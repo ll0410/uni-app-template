@@ -1,0 +1,93 @@
+{
+  "easycom": {
+    "autoscan": true,
+    "custom": {}
+  },
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/mine/index",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "subPackages/goods",
+      "pages": [
+        {
+          "path": "pages/list/index",
+          "style": {
+            "navigationBarTitleText": "商品列表"
+          }
+        }
+      ]
+    },
+    {
+      "root": "subPackages/order",
+      "pages": [
+        {
+          "path": "pages/list/index",
+          "style": {
+            "navigationBarTitleText": "订单列表"
+          }
+        }
+      ]
+    },
+    {
+      "root": "subPackages/demo",
+      "pages": [
+        {
+          "path": "pages/index/index",
+          "style": {
+            "navigationBarTitleText": "能力演示"
+          }
+        }
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": ["subPackages/goods"]
+    },
+    "pages/mine/index": {
+      "network": "all",
+      "packages": ["subPackages/order", "subPackages/demo"]
+    }
+  },
+  "tabBar": {
+    "color": "#8a8f99",
+    "selectedColor": "#2b6cff",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app-template",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f7f8fa"
+  }
+}

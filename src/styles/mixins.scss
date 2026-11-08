@@ -1,0 +1,16 @@
+@mixin text-ellipsis($lines: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @if $lines == 1 {
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+  }
+}
+
+@mixin safe-area-bottom($extra: 0) {
+  padding-bottom: calc(#{$extra} + env(safe-area-inset-bottom));
+}

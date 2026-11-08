@@ -1,0 +1,28 @@
+# 依赖
+node_modules
+
+# 构建产物
+dist
+unpackage
+coverage
+
+# 本地环境变量（模板中的 .env.* 需要提交）
+.env.local
+.env.*.local
+
+# 日志
+npm-debug.log*
+pnpm-debug.log*
+*.log
+
+# 编辑器与系统
+.DS_Store
+.idea
+.hbuilderx
+
+# Trae 临时分享产物
+.trae-html-share-packages
+.screenshots
+
+# 微信开发者工具本地私有配置
+project.private.config.json

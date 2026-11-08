@@ -1,0 +1,80 @@
+@import './theme';
+
+page {
+  min-height: 100%;
+  background-color: var(--app-color-bg);
+  color: var(--app-color-text);
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  font-size: 28rpx;
+  line-height: 1.5;
+}
+
+view,
+text,
+image,
+scroll-view,
+swiper,
+button,
+input,
+textarea {
+  box-sizing: border-box;
+}
+
+button::after {
+  border: none;
+}
+
+// H5 导航栏由 uni-h5 渲染，页面创建时带有内联浅色样式。
+// 深色主题下用全局样式兜底，避免首次加载 / 刷新时先出现白色导航栏。
+// #ifdef H5
+.theme-dark .uni-page-head {
+  background-color: #16181d !important;
+  color: #fff !important;
+}
+
+.theme-dark .uni-page-head__title,
+.theme-dark .uni-page-head-btn {
+  color: #fff !important;
+}
+
+.theme-dark .uni-tabbar {
+  background-color: #16181d !important;
+}
+
+.theme-dark .uni-tabbar-border {
+  background-color: #2a2d35 !important;
+}
+
+// #endif
+
+.app-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 24rpx 32rpx;
+  background-color: var(--app-color-surface);
+  border: 1rpx solid var(--app-color-border);
+  border-radius: var(--app-radius-md);
+  color: var(--app-color-text);
+  font-size: 28rpx;
+  line-height: 1.4;
+}
+
+.app-button--primary {
+  background-color: var(--app-color-primary);
+  border-color: var(--app-color-primary);
+  color: #fff;
+}
+
+.app-button--danger {
+  background-color: var(--app-color-danger);
+  border-color: var(--app-color-danger);
+  color: #fff;
+}
+
+.app-button[disabled] {
+  opacity: 0.6;
+}

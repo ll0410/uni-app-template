@@ -1,0 +1,7 @@
+node_modules
+dist
+unpackage
+coverage
+pnpm-lock.yaml
+src/static
+src/types/auto-imports.d.ts
