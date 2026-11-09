@@ -364,19 +364,6 @@ socket.connect()
 - 隐私合规：发布前在微信公众平台配置「用户隐私保护指引」，涉及隐私接口时按微信官方流程补充授权弹窗。
 - 请求重试与刷新策略集中在一处，接入真实后端时只需保证响应结构为 `{ code, message, data }`。
 
-## 验收清单
-
-- [x] `pnpm install` 可成功安装（含 `pnpm-lock.yaml`）。
-- [x] `pnpm dev:mp-weixin` 输出 `dist/dev/mp-weixin`，`app.json` 含主包页面、TabBar 与三个分包。
-- [x] `pnpm dev:h5` 可启动并访问 `http://localhost:5173`。
-- [x] `pnpm lint`、`pnpm lint:style`、`pnpm type-check` 全部通过。
-- [x] Husky `pre-commit` 执行 lint-staged，`commit-msg` 执行 Commitlint。
-- [x] 登录守卫、角色权限、主题切换、i18n、Pinia 持久化、请求封装均有可运行示例。
-- [x] README 覆盖 VSCode + 微信开发者工具流程与 App / HBuilderX 调试打包流程。
-- [x] 目录结构清晰，核心基础设施与业务示例分离。
-- [ ] 微信开发者工具实际导入 `dist/dev/mp-weixin`（需本机安装开发者工具后人工确认）。
-- [ ] App 真机运行与打包（需配置 DCloud appid 与证书后在 HBuilderX 确认）。
-
 ## 可运行验证步骤
 
 1. 安装与静态检查：
@@ -418,12 +405,11 @@ socket.connect()
 
 5. 演示页（能力演示分包）额外覆盖：请求取消、分页、倒计时、权限隐藏、Token 过期并发刷新。
 
-## 复制到新项目
+## 开始新项目
 
-1. 复制除 `node_modules`、`dist` 外的全部文件。
-2. 修改 `package.json` 的 `name`、`src/manifest.json` 的 `name` 与 `appid`、`src/pages.json` 的标题、`.env*` 中的标题与接口地址。
-3. 删除不需要的分包与示例页面，并同步更新 `pages.json` 与 `router/routes.ts`。
-4. 执行 `pnpm install`，按上文「可运行验证步骤」逐项确认。
+1. 修改 `package.json` 的 `name`、`src/manifest.json` 的 `name` 与 `appid`、`src/pages.json` 的标题、`.env*` 中的标题与接口地址。
+2. 删除不需要的分包与示例页面，并同步更新 `pages.json` 与 `router/routes.ts`。
+3. 执行 `pnpm install`，按上文「可运行验证步骤」逐项确认。
 
 ## 常见问题
 
